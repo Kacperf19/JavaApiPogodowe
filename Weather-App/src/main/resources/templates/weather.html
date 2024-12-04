@@ -9,28 +9,82 @@
     <link rel="stylesheet" type="text/css" href="/css/weather.css">
 </head>
 <body>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body text-center">
-                    <h1 class="card-title">Weather in <span th:text="${city}">City</span>, <span th:text="${country}">Country</span></h1>
-                    <span th:classappend="${weatherIcon} + ' weather-icon'"></span>
-                    <p class="card-text"><strong>Description:</strong> <span th:text="${weatherDescription}">Description</span></p>
-                    <p class="card-text"><strong>Temperature:</strong> <span th:text="${temperature}">Temperature</span>°C</p>
-                    <p class="card-text"><strong>Humidity:</strong> <span th:text="${humidity}">Humidity</span>%</p>
-                    <p class="card-text"><strong>Wind Speed:</strong> <span th:text="${windSpeed}">Wind Speed</span> m/s</p>
-                    <a href="/" class="btn btn-secondary btn-block">Back</a>
-                    <div th:if="${error}" class="alert alert-danger mt-3">
-                        <p>Error: <span th:text="${error}"></span></p>
+<section class="vh-100" style="background-color: #cdc4f9;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-12 col-xl-10">
+                <div class="card shadow-0 border border-dark border-5 text-white" style="border-radius: 10px;">
+                    <div class="card-body p-4">
+                        <div class="row text-center">
+                            <div class="col-md-9 text-center border-end border-5 border-dark py-4"
+                                 style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
+                                <div class="d-flex justify-content-around mt-3">
+                                    <p class="small"><span th:text="${city}">City</span></p>
+                                    <p class="small">21.02.2021</p>
+                                    <p class="small">Rain map</p>
+                                </div>
+                                <div class="d-flex justify-content-around align-items-center py-5 my-4">
+                                    <p class="fw-bold mb-0" style="font-size: 7rem;"><span th:text="${temperature}">-4°C</span></p>
+                                    <div class="text-start">
+                                        <p class="small">10:00</p>
+                                        <p class="h3 mb-3">Sunday</p>
+                                        <p class="small mb-0"><span th:text="${weatherDescription}">Cloudy</span></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-around align-items-center mb-3">
+                                    <div class="flex-column">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                    <div class="flex-column border" style="border-radius: 10px; padding: .75rem">
+                                        <p class="small mb-1">Sun</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Mon</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Tue</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Wed</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Thu</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Fri</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Sat</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-end">
+                                <p class="small mt-3 mb-5 pb-5">For a month</p>
+                                <p class="pb-1"><span class="pe-2">11:00</span> <strong>-4°</strong></p>
+                                <p class="pb-1"><span class="pe-2">12:00</span> <strong>-4°</strong></p>
+                                <p class="pb-1"><span class="pe-2">13:00</span> <strong>-5°</strong></p>
+                                <p class="pb-1"><span class="pe-2">14:00</span> <strong>-7°</strong></p>
+                                <p class="pb-1"><span class="pe-2">15:00</span> <strong>-6°</strong></p>
+                                <p class="pb-1"><span class="pe-2">16:00</span> <strong>-4°</strong></p>
+                                <p><span class="pe-2">17:00</span> <strong>-3°</strong></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- Bootstrap JS and dependencies -->
+</section><!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

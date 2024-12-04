@@ -1,48 +1,30 @@
 package com.example.weather_app.model;
 
 import com.sun.tools.javac.Main;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 public class WeatherResponse {
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Wind getWind() {
         return wind;
     }
 
-    public void setWind(Wind wind) {
-        this.wind = wind;
-    }
-
     public List<Weather> getWeather() {
         return weather;
-    }
-
-    public void setWeather(List<Weather> weather) {
-        this.weather = weather;
     }
 
     public Main getMain() {
         return main;
     }
 
-    public void setMain(Main main) {
-        this.main = main;
-    }
-
     public Sys getSys() {
         return sys;
-    }
-
-    public void setSys(Sys sys) {
-        this.sys = sys;
     }
 
     private String name;
