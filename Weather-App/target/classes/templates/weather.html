@@ -15,16 +15,17 @@
             <div class="col-md-12 col-xl-10">
                 <div class="card shadow-0 border border-dark border-5 text-white" style="border-radius: 10px;">
                     <div class="card-body p-4">
+                        <div class="d-flex justify-content-around mt-3">
+                            <p class="small"><span style="font-size:50px; " th:text="${city}">City</span></p>
+                            <p class="small" style="font-size:50px; " th:text="${currentDate}"></p>
+
+                        </div>
                         <div class="row text-center">
                             <div class="col-md-9 text-center border-end border-5 border-dark py-4"
                                  style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
-                                <div class="d-flex justify-content-around mt-3">
-                                    <p class="small"><span th:text="${city}">City</span></p>
-                                    <p class="small">21.02.2021</p>
-                                    <p class="small">Rain map</p>
-                                </div>
+
                                 <div class="d-flex justify-content-around align-items-center py-5 my-4">
-                                    <p class="fw-bold mb-0" style="font-size: 7rem;"><span th:text="${temperature}">-4°C</span></p>
+                                    <p class="fw-bold mb-0" style="font-size: 7rem;"><span th:text="${temperature} + ' °C'"></span></p>
                                     <div class="text-start">
                                         <p class="small">10:00</p>
                                         <p class="h3 mb-3">Sunday</p>
@@ -68,16 +69,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 text-end">
-                                <p class="small mt-3 mb-5 pb-5">For a month</p>
-                                <p class="pb-1"><span class="pe-2">11:00</span> <strong>-4°</strong></p>
-                                <p class="pb-1"><span class="pe-2">12:00</span> <strong>-4°</strong></p>
-                                <p class="pb-1"><span class="pe-2">13:00</span> <strong>-5°</strong></p>
-                                <p class="pb-1"><span class="pe-2">14:00</span> <strong>-7°</strong></p>
-                                <p class="pb-1"><span class="pe-2">15:00</span> <strong>-6°</strong></p>
-                                <p class="pb-1"><span class="pe-2">16:00</span> <strong>-4°</strong></p>
-                                <p><span class="pe-2">17:00</span> <strong>-3°</strong></p>
-                            </div>
+
                         </div>
                     </div>
                 </div>

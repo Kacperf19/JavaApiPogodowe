@@ -7,6 +7,8 @@ import java.util.List;
 
 @Setter
 public class WeatherResponse {
+
+
     public String getName() {
         return name;
     }
@@ -32,6 +34,9 @@ public class WeatherResponse {
     private List<Weather> weather;
     private Main main;
     private Wind wind;
+
+
+
     public static class Sys{
         public String getCountry() {
             return country;
@@ -78,7 +83,8 @@ public class WeatherResponse {
         }
 
         public double getTemp() {
-            return temp;
+            double roundedTemperature = Math.round(temp * 10.0) / 10.0;
+            return roundedTemperature;
         }
 
         public void setTemp(double temp) {
