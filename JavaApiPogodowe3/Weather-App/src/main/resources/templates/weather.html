@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>⛅Weather App by GoldenCat⛅</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Weather Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/weather.css">
+</head>
+
+
+
+<body>
+
+<script>
+
+    function updateTime() {
+        const currentDate = new Date();
+
+
+        let hours = currentDate.getHours().toString().padStart(2, '0');
+        let minutes = currentDate.getMinutes().toString().padStart(2, '0');
+        let seconds = currentDate.getSeconds().toString().padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds}`;
+
+
+        document.getElementById('currentTime').textContent = timeString;
+
+
+        const weekdayNames = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
+        const weekdayString = weekdayNames[currentDate.getDay()];
+
+        document.getElementById('currentWeekday').textContent = weekdayString;
+    }
+
+    setInterval(updateTime, 1000);
+
+
+    window.onload = updateTime;
+</script>
+
+
+<section class="vh-100" style="background-color: #cdc4f9;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-12 col-xl-10">
+                <div class="card shadow-0 border border-dark border-5 text-white" style="border-radius: 10px;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-around mt-3">
+                            <p class="small"><span style="font-size:50px; " th:text="${city}">City</span></p>
+                            <p class="small" style="font-size:50px; " th:text="${currentDate}"></p>
+
+                        </div>
+                        <div class="row text-center" style="justify-content: space-around;">
+                            <div class="col-md-9 text-center border-end border-5 border-dark py-4"
+                                 style="margin-top: -1.5rem; margin-bottom: -1.5rem; ">
+
+                                <div class="d-flex justify-content-around align-items-center py-5 my-4">
+                                    <p class="fw-bold mb-0" style="font-size: 7rem;"><span th:text="${temperature} + ' °C'"></span></p>
+                                    <div class="text-start" style="float: right">
+                                        <p class="small" ><span id="currentTime"></span></p>
+                                        <p class="h3 mb-3" ><span id="currentWeekday"></span></p>
+                                        <p class="small mb-0"><span th:text="${weatherDescription}"></span></p>
+                                        <p class="small mb-0">
+                                            <i th:class="${weatherIcon}"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-around align-items-center mb-3">
+                                    <div class="flex-column">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                    <div class="flex-column border" style="border-radius: 10px; padding: .75rem">
+                                        <p class="small mb-1">Sun</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Mon</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Tue</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Wed</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Thu</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Fri</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <p class="small mb-1">Sat</p>
+                                        <p class="small mb-0"><strong>-4°C</strong></p>
+                                    </div>
+                                    <div class="flex-column">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
